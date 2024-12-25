@@ -1,0 +1,672 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box; /* Ensure padding and borders are included in width and height calculations */
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: black;
+    color: #ffffff;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+    width: 100%;
+    padding: 20px;
+    background-color: white; /* Changed to white */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+    flex-grow: 1;
+}
+
+h1 {
+    color: white;
+    margin: 0;
+    flex-basis: 200px;
+}
+
+nav ul li {
+    margin: 0; /* Set margin to 0 for no space */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #007BFF; /* Changed to blue */
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+body.dark-mode nav ul li a {
+    color: white;
+}
+
+
+body.dark-mode nav {
+  background-color: #000; /* Black background for dark mode */
+}
+nav ul li a:hover {
+  transform: translateY(-2px); /* Move the link up slightly */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Grey shadow in light mode */
+}
+
+body.dark-mode nav ul li a:hover {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3); /* White shadow in dark mode */
+}
+
+
+.hero {
+    position: relative;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 0; /* Removed margin to eliminate space with navbar */
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+}
+
+.hero-content {
+    position: relative; /* Make sure text is above the image */
+    z-index: 1; /* Ensure text is above the image */
+}
+
+.hero h1 {
+    font-size: 3rem; /* Adjusted font size */
+    font-weight: 600; /* Bold font */
+    letter-spacing: 1px; /* Spacing between letters */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for depth */
+}
+
+.hero p {
+    font-size: 1.5rem; /* Adjusted font size */
+    margin-top: 10px; /* Space between title and description */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #007BFF; /* Active dot color */
+}
+
+main {
+    padding: 0px;
+    margin-top: 0;
+}
+
+section {
+    margin: 0;
+    padding: 40px 0;
+}
+
+h2 {
+    text-align: center;
+    color: #007BFF;
+}
+
+body.dark-mode h2 {
+    color: #ffffff;
+}
+
+
+.facilities-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.facility-card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.facility-card img {
+    width: 80px;
+}
+
+.facility-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.room-card {
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.room-card:hover {
+    transform: scale(1.05);
+}
+
+body.dark-mode .facility-card {
+  background-color: #2a2a2a; /* Dark background for facility cards */
+  color: #ffffff; /* White text color */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Shadow effect */
+}
+
+body.dark-mode .room-card {
+  background-color: black; /* Slightly different dark background for room cards */
+  color: #ffffff; /* White text color */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Shadow effect */
+}
+
+
+footer {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.about-section {
+    padding: 60px;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-section p {
+    max-width: 800px;
+    text-align: justify;
+    text-align-last: center; 
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-section h2 {
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+.rooms-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%; 
+}
+
+.room-card {
+    width: 100%; 
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.room-card iframe {
+    width: 90%; /* Increased width */
+    height: 400px; /* Increased height */
+    aspect-ratio: 16 / 9; /* Adjusted aspect ratio for better dimensions */
+}
+
+.room-card .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+    .room-card iframe {
+        width: 80%; /* Ensure it takes the reduced width */
+        height: 200px; /* Maintain increased height */
+        border: none; /* Remove any borders */
+    }
+
+    .facilities-container {
+        grid-template-columns: 1fr; /* Stack facility cards in one column */
+        padding: 0 10px; /* Prevent overflow */
+        margin: 0; /* Remove margin */
+    }
+
+   
+
+  .nav-title {
+     margin-left: 90px;
+}
+
+
+.hamburger-icon {
+  display: block; /* Show the hamburger icon */
+  cursor: pointer; /* Change cursor to pointer */
+  width: 30px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+       
+
+nav ul {
+  display: none; /* Hide the nav links by default */
+  flex-direction: column; /* Stack links vertically */
+  width: 100%; /* Full width */
+  background-color: white; /* Optional: background color */
+  position: absolute; /* Positioning for dropdown */
+  top: 60px; /* Adjust according to your header height */
+  left: 0; /* Align to the left */
+}
+
+nav ul.active {
+  display: flex; /* Show the nav links when active */
+}
+    nav ul li {
+        margin: 0; /* Reduced vertical spacing between links */
+    }
+
+    .hero {
+        margin-top: 0; /* Adjusted margin to prevent overlap with the navbar */
+    }
+
+    body {
+        overflow-x: hidden; /* Prevent horizontal overflow */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* Shifted to the left */
+    background-color: #25D366; /* WhatsApp color */
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.nav-title {
+  font-weight: bold; /* Makes the title bold */
+  color: #007BFF;
+  font-size: 1.6rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.booking-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  padding: 20px; /* Optional padding */
+}
+
+.hamburger-icon {
+  display: none; /* Hide by default */
+}
+
+@media (max-width: 768px) {
+  .hamburger-icon {
+      display: block; /* Show in mobile view */
+      cursor: pointer; /* Change cursor to pointer */
+      width: 20px; /* Adjust size as needed */
+      height: auto; /* Maintain aspect ratio */
+  }
+
+  nav ul {
+      display: none; /* Hide the nav links by default */
+      flex-direction: column; /* Stack links vertically */
+      width: 100%; /* Full width */
+      background-color: white; /* Optional: background color */
+      position: absolute; /* Positioning for dropdown */
+      top: 60px; /* Adjust according to your header height */
+      left: 0; /* Align to the left */
+  }
+
+  nav ul.active {
+      display: flex; /* Show the nav links when active */
+  }
+}
+
+body.dark-mode .hamburger-icon {
+  filter: invert(1); /* Invert color to make it white */
+}
+
+
+
+nav {
+  position: relative; /* Base styling */
+}
+
+nav ul {
+  display: flex; /* Default to flex for desktop */
+  list-style: none; /* Remove default list styling */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) { /* Adjust this breakpoint as needed */
+  nav ul {
+      display: none; /* Hide the nav links by default */
+      flex-direction: column; /* Stack links vertically */
+      width: 100%; /* Full width */
+      position: absolute; /* Positioning for dropdown */
+      top: 60px; /* Adjust according to your header height */
+      left: 0; /* Align to the left */
+      background-color: white; /* Light mode background color */
+      transition: background-color 0.3s; /* Smooth transition */
+  }
+
+  nav ul.active {
+      display: flex; /* Show the nav links when active */
+  }
+
+  .hamburger-icon {
+      cursor: pointer; /* Change cursor on hover */
+      z-index: 10; /* Ensure the icon is above other elements */
+  }
+}
+
+/* Dark mode styles */
+body.dark-mode nav ul {
+  background-color: black; /* Dark mode background color */
+}
+
+body.dark-mode nav ul li a {
+  color: #ffffff; /* Change text color to white in dark mode */
+}
+
+body.dark-mode nav ul li a:hover {
+  color: #ffffff; /* Keep hover color white in dark mode */
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+  nav ul {
+      display: flex; /* Show nav links in desktop view */
+  }
+
+  /* Additional desktop styles */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  nav ul {
+      display: none; /* Hide the nav links by default */
+      flex-direction: column; /* Stack links vertically */
+      width: 100%; /* Full width */
+      position: absolute; /* Positioning for dropdown */
+      top: 60px; /* Adjust according to your header height */
+      left: 0; /* Align to the left */
+      background-color: white; /* Light mode background color */
+      transition: background-color 0.3s; /* Smooth transition */
+      align-items: center; /* Center the items */
+  }
+
+  nav ul.active {
+      display: flex; /* Show the nav links when active */
+  }
+
+  nav ul li {
+      width: 100%; /* Make each list item full width */
+      text-align: center; /* Center the text within each list item */
+  }
+
+  .hamburger-icon {
+      cursor: pointer; /* Change cursor on hover */
+      z-index: 10; /* Ensure the icon is above other elements */
+  }
+}
+/* Mobile Styles */
+@media (max-width: 768px) {
+  nav ul {
+      display: none; /* Hide the nav links by default */
+      flex-direction: column; /* Stack links vertically */
+      width: 100%; /* Full width */
+      position: absolute; /* Positioning for dropdown */
+      top: 60px; /* Adjust according to your header height */
+      left: 0; /* Align to the left */
+      background-color: white; /* Light mode background color */
+      transition: background-color 0.3s; /* Smooth transition */
+      align-items: center; /* Center the items */
+      padding-top: 10px; /* Add padding to the top for spacing */
+  }
+
+  nav ul.active {
+      display: flex; /* Show the nav links when active */
+  }
+
+  nav ul li {
+      width: 100%; /* Make each list item full width */
+      text-align: center; /* Center the text within each list item */
+      padding: 10px 0; /* Add padding for vertical spacing */
+  }
+
+  .hamburger-icon {
+      cursor: pointer; /* Change cursor on hover */
+      z-index: 10; /* Ensure the icon is above other elements */
+  }
+}
+/* Mobile Styles */
+@media (max-width: 768px) {
+  nav {
+      position: relative; /* Ensure positioning is relative */
+      z-index: 10; /* Ensure the navbar is above other elements */
+  }
+
+  nav ul {
+      display: none; /* Hide the nav links by default */
+      flex-direction: column; /* Stack links vertically */
+      width: 100%; /* Full width */
+      position: absolute; /* Positioning for dropdown */
+      top: 70px; /* Adjust this value to move the navbar down */
+      left: 0; /* Align to the left */
+      background-color: white; /* Light mode background color */
+      transition: background-color 0.3s; /* Smooth transition */
+      align-items: center; /* Center the items */
+      padding-top: 10px; /* Add padding to the top for spacing */
+  }
+
+  nav ul.active {
+      display: flex; /* Show the nav links when active */
+  }
+
+  nav ul li {
+      width: 100%; /* Make each list item full width */
+      text-align: center; /* Center the text within each list item */
+      padding: 10px 0; /* Add padding for vertical spacing */
+  }
+
+  .hamburger-icon {
+      cursor: pointer; /* Change cursor on hover */
+      z-index: 10; /* Ensure the icon is above other elements */
+  }
+
+  .nav-title {
+      margin-bottom: 20px; /* Add margin to the bottom of the nav title */
+      text-align: center; /* Center the nav title */
+  }
+}
+
+/* Styles for Google Form in Mobile View */
+@media (max-width: 768px) {
+  .google-form-container {
+      width: 100%; /* Make the container full width */
+      padding: 20px; /* Add some padding around the form */
+      box-sizing: border-box; /* Ensure padding is included in width */
+  }
+
+  iframe {
+      width: 100%; /* Ensure the iframe takes full width */
+      height: 600px; /* Adjust height as needed for mobile view */
+      border: none; /* Remove default border */
+  }
+}
+
+
+.ns-logo {
+    width: 45px; /* Adjust the size of the logo */
+    height: 50px;
+    margin-left: 10px; /* Add space between the title and the logo */
+    margin-bottom: 10px;
+    filter: invert(31%) sepia(83%) saturate(3596%) hue-rotate(194deg) brightness(104%) contrast(106%);
+   
+}
+
+.nav-title-container {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .nav-title-container {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .nav-title {
+        font-size: 1.5rem;
+        margin-right: 10px; /* Adjust font size in mobile view */
+    }
+
+    .ns-logo {
+        width: 45px; /* Smaller logo in mobile view */
+        margin-left: 5px; /* Adjust space between text and logo */
+    }
+
+    nav ul {
+        text-align: center;
+        margin-top: 20px; /* Adjust spacing from the hamburger menu */
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 15px; /* Space between menu items */
+    }
+}
+
+.booking-form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff; /* White background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-top: 0;
+  font-size: 2rem;
+  color: #007bff; /* Default color for light mode */
+}
+
+
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  padding: 12px; /* Increased padding for better visibility */
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff; /* Blue button */
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.status-message {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+button[type="submit"] {
+  display: block;
+  margin: 20px auto 0;
+}
